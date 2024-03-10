@@ -1,0 +1,4 @@
+.vscode
+.vscode/*
+gui/build
+gui/build/*
