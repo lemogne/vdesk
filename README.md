@@ -23,7 +23,7 @@ git clone https://github.com/lemogne/vdesk.git
 or download a ZIP archive of this repository via the green `Code` button in the top right.
 
 ## Installation
-Requirements: a suitable C++ compiler, CMake.
+Requirements: a suitable C++ compiler, CMake, wxWidgets 3.
 
 To compile, run in the root directory of the repository:
 ```
