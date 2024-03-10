@@ -1,0 +1,6 @@
+fullscreen = false
+screen_width = 1920
+screen_height = 1080
+background_color = #000000
+text_color = #FFFFFF
+font = Unifont Medium 12

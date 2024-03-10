@@ -1,0 +1,3 @@
+/home/lemon/Desktop/Programming/vdesk/gui/build/CMakeFiles/vdesk.dir
+/home/lemon/Desktop/Programming/vdesk/gui/build/CMakeFiles/edit_cache.dir
+/home/lemon/Desktop/Programming/vdesk/gui/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,5 @@
+XFCE	startxfce4
+LXDE	lxsession
+LXQt	startlxqt
+KDE	startkde
+GNOME	gnome-session
