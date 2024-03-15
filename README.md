@@ -25,10 +25,19 @@ or download a ZIP archive of this repository via the green `Code` button in the 
 ## Installation
 Requirements: a suitable C++ compiler, CMake, wxWidgets 3.
 
+### Quick installation (shell script)
+For a quick and simple installation, download the repository or the release and run
+```
+cd gui
+sh install.sh
+```
+This will install VDesk in `~/.vdesk` and create a desktop shortcut.
+
+### Manual installation
 To compile, run in the root directory of the repository:
 ```
 cd gui
-mkdir build
+mkdir -p build
 cmake -DCMAKE_BUILD_TYPE=Release -B build
 cmake --build build
 ```
