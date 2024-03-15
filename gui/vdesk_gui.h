@@ -72,6 +72,8 @@ class main_window : public wxFrame
 		wxButton* m_de_settings;
 		wxStaticText* m_staticText83494;
 		wxButton* m_sett_misc;
+		wxStaticText* m_staticText24;
+		wxButton* m_about;
 
 		// Virtual event handlers, override them in your derived class
 		virtual void close( wxCloseEvent& event ) { event.Skip(); }
@@ -84,6 +86,7 @@ class main_window : public wxFrame
 		virtual void cons( wxCommandEvent& event ) { event.Skip(); }
 		virtual void de_settings( wxCommandEvent& event ) { event.Skip(); }
 		virtual void sett_misc( wxCommandEvent& event ) { event.Skip(); }
+		virtual void about( wxCommandEvent& event ) { event.Skip(); }
 
 
 	public:
