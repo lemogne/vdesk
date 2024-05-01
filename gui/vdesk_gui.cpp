@@ -37,33 +37,6 @@ main_window::main_window( wxWindow* parent, wxWindowID id, const wxString& title
 
 	bSizer3->Add( bSizer6, 1, wxALIGN_CENTER|wxTOP, 5 );
 
-	wxBoxSizer* bSizer5;
-	bSizer5 = new wxBoxSizer( wxHORIZONTAL );
-
-
-	bSizer5->Add( 0, 0, 1, wxEXPAND, 5 );
-
-	m_staticText2 = new wxStaticText( m_profiles, wxID_ANY, wxT("Profile"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText2->Wrap( -1 );
-	bSizer5->Add( m_staticText2, 0, wxALIGN_CENTER|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-
-	wxArrayString m_profile_selectChoices;
-	m_profile_select = new wxChoice( m_profiles, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_profile_selectChoices, 0 );
-	m_profile_select->SetSelection( 0 );
-	bSizer5->Add( m_profile_select, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-
-
-	bSizer5->Add( 0, 0, 1, wxEXPAND, 5 );
-
-	m_button_connect = new wxButton( m_profiles, wxID_ANY, wxT("Connect"), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer5->Add( m_button_connect, 0, wxALIGN_CENTER|wxALL, 5 );
-
-
-	bSizer5->Add( 0, 0, 1, wxEXPAND, 5 );
-
-
-	bSizer3->Add( bSizer5, 1, wxALIGN_CENTER, 5 );
-
 	wxStaticBoxSizer* sbSizer2;
 	sbSizer2 = new wxStaticBoxSizer( new wxStaticBox( m_profiles, wxID_ANY, wxT("Profile Management") ), wxHORIZONTAL );
 
@@ -180,6 +153,33 @@ main_window::main_window( wxWindow* parent, wxWindowID id, const wxString& title
 
 	bSizer8->Add( bSizer9, 1, wxEXPAND, 5 );
 
+	wxBoxSizer* bSizer5;
+	bSizer5 = new wxBoxSizer( wxHORIZONTAL );
+
+
+	bSizer5->Add( 0, 0, 1, wxEXPAND, 5 );
+
+	m_staticText2 = new wxStaticText( m_custom, wxID_ANY, wxT("Profile"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText2->Wrap( -1 );
+	bSizer5->Add( m_staticText2, 0, wxALIGN_CENTER|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+
+	wxArrayString m_profile_selectChoices;
+	m_profile_select = new wxChoice( m_custom, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_profile_selectChoices, 0 );
+	m_profile_select->SetSelection( 0 );
+	bSizer5->Add( m_profile_select, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+
+
+	bSizer5->Add( 0, 0, 1, wxEXPAND, 5 );
+
+	m_button_connect = new wxButton( m_custom, wxID_ANY, wxT("Connect"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer5->Add( m_button_connect, 0, wxALIGN_CENTER|wxALL, 5 );
+
+
+	bSizer5->Add( 0, 0, 1, wxEXPAND, 5 );
+
+
+	bSizer8->Add( bSizer5, 1, wxALIGN_CENTER, 5 );
+
 
 	m_custom->SetSizer( bSizer8 );
 	m_custom->Layout();
@@ -227,7 +227,7 @@ main_window::main_window( wxWindow* parent, wxWindowID id, const wxString& title
 
 	m_staticText24 = new wxStaticText( m_settings, wxID_ANY, wxT("About"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText24->Wrap( -1 );
-	fgSizer11->Add( m_staticText24, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxEXPAND|wxALIGN_CENTER_VERTICAL, 5 );
+	fgSizer11->Add( m_staticText24, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
 	m_about = new wxButton( m_settings, wxID_ANY, wxT("View..."), wxDefaultPosition, wxDefaultSize, 0 );
 	fgSizer11->Add( m_about, 0, wxALL, 5 );
@@ -254,12 +254,12 @@ main_window::main_window( wxWindow* parent, wxWindowID id, const wxString& title
 
 	// Connect Events
 	this->Connect( wxEVT_CLOSE_WINDOW, wxCloseEventHandler( main_window::close ) );
-	m_button_connect->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::connect ), NULL, this );
 	m_button_add->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::add ), NULL, this );
 	m_button_rem->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::remove ), NULL, this );
 	m_button_mod->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::modify ), NULL, this );
 	m_connect_c->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::connect_c ), NULL, this );
 	m_add_new->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::add_c ), NULL, this );
+	m_button_connect->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::connect ), NULL, this );
 	m_cons->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::cons ), NULL, this );
 	m_de_settings->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::de_settings ), NULL, this );
 	m_sett_misc->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::sett_misc ), NULL, this );
@@ -270,12 +270,12 @@ main_window::~main_window()
 {
 	// Disconnect Events
 	this->Disconnect( wxEVT_CLOSE_WINDOW, wxCloseEventHandler( main_window::close ) );
-	m_button_connect->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::connect ), NULL, this );
 	m_button_add->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::add ), NULL, this );
 	m_button_rem->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::remove ), NULL, this );
 	m_button_mod->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::modify ), NULL, this );
 	m_connect_c->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::connect_c ), NULL, this );
 	m_add_new->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::add_c ), NULL, this );
+	m_button_connect->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::connect ), NULL, this );
 	m_cons->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::cons ), NULL, this );
 	m_de_settings->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::de_settings ), NULL, this );
 	m_sett_misc->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::sett_misc ), NULL, this );
@@ -427,7 +427,7 @@ de_settings::de_settings( wxWindow* parent, wxWindowID id, const wxString& title
 	bSizer20->Add( m_de_remove, 0, wxALL, 5 );
 
 
-	fgSizer3->Add( bSizer20, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL, 5 );
+	fgSizer3->Add( bSizer20, 1, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 
 	m_sdbSizer2 = new wxStdDialogButtonSizer();
 	m_sdbSizer2OK = new wxButton( this, wxID_OK );
@@ -436,7 +436,7 @@ de_settings::de_settings( wxWindow* parent, wxWindowID id, const wxString& title
 	m_sdbSizer2->AddButton( m_sdbSizer2Cancel );
 	m_sdbSizer2->Realize();
 
-	fgSizer3->Add( m_sdbSizer2, 1, wxALIGN_CENTER|wxALL, 5 );
+	fgSizer3->Add( m_sdbSizer2, 0, wxALIGN_CENTER|wxALL, 5 );
 
 
 	bSizer8->Add( fgSizer3, 1, wxALL|wxEXPAND, 5 );

@@ -16,7 +16,6 @@
 #include <wx/colour.h>
 #include <wx/settings.h>
 #include <wx/sizer.h>
-#include <wx/choice.h>
 #include <wx/button.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
@@ -25,6 +24,7 @@
 #include <wx/panel.h>
 #include <wx/textctrl.h>
 #include <wx/combobox.h>
+#include <wx/choice.h>
 #include <wx/notebook.h>
 #include <wx/frame.h>
 #include <wx/clrpicker.h>
@@ -48,9 +48,6 @@ class main_window : public wxFrame
 		wxNotebook* m_notebook1;
 		wxPanel* m_profiles;
 		wxStaticText* m_staticText3;
-		wxStaticText* m_staticText2;
-		wxChoice* m_profile_select;
-		wxButton* m_button_connect;
 		wxButton* m_button_add;
 		wxButton* m_button_rem;
 		wxButton* m_button_mod;
@@ -64,6 +61,9 @@ class main_window : public wxFrame
 		wxComboBox* m_DE;
 		wxButton* m_connect_c;
 		wxButton* m_add_new;
+		wxStaticText* m_staticText2;
+		wxChoice* m_profile_select;
+		wxButton* m_button_connect;
 		wxPanel* m_settings;
 		wxStaticText* m_staticText151;
 		wxStaticText* m_staticText61;
@@ -77,12 +77,12 @@ class main_window : public wxFrame
 
 		// Virtual event handlers, override them in your derived class
 		virtual void close( wxCloseEvent& event ) { event.Skip(); }
-		virtual void connect( wxCommandEvent& event ) { event.Skip(); }
 		virtual void add( wxCommandEvent& event ) { event.Skip(); }
 		virtual void remove( wxCommandEvent& event ) { event.Skip(); }
 		virtual void modify( wxCommandEvent& event ) { event.Skip(); }
 		virtual void connect_c( wxCommandEvent& event ) { event.Skip(); }
 		virtual void add_c( wxCommandEvent& event ) { event.Skip(); }
+		virtual void connect( wxCommandEvent& event ) { event.Skip(); }
 		virtual void cons( wxCommandEvent& event ) { event.Skip(); }
 		virtual void de_settings( wxCommandEvent& event ) { event.Skip(); }
 		virtual void sett_misc( wxCommandEvent& event ) { event.Skip(); }
