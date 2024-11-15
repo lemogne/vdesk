@@ -13,7 +13,6 @@ Features of the GUI application include:
 Expected future features:
 - Encryption of the settings files to prevent malicious programs from changing them
 - Settings regarding security etc.
-- Installation script
 - ...
 ## Download
 Either run
