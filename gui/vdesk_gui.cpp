@@ -225,6 +225,13 @@ main_window::main_window( wxWindow* parent, wxWindowID id, const wxString& title
 	m_sett_misc = new wxButton( m_settings, wxID_ANY, wxT("Edit..."), wxDefaultPosition, wxDefaultSize, 0 );
 	fgSizer11->Add( m_sett_misc, 0, wxALL, 5 );
 
+	m_staticText24 = new wxStaticText( m_settings, wxID_ANY, wxT("About"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText24->Wrap( -1 );
+	fgSizer11->Add( m_staticText24, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxEXPAND|wxALIGN_CENTER_VERTICAL, 5 );
+
+	m_about = new wxButton( m_settings, wxID_ANY, wxT("View..."), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer11->Add( m_about, 0, wxALL, 5 );
+
 
 	bSizer81->Add( fgSizer11, 1, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 
@@ -256,6 +263,7 @@ main_window::main_window( wxWindow* parent, wxWindowID id, const wxString& title
 	m_cons->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::cons ), NULL, this );
 	m_de_settings->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::de_settings ), NULL, this );
 	m_sett_misc->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::sett_misc ), NULL, this );
+	m_about->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::about ), NULL, this );
 }
 
 main_window::~main_window()
@@ -271,6 +279,7 @@ main_window::~main_window()
 	m_cons->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::cons ), NULL, this );
 	m_de_settings->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::de_settings ), NULL, this );
 	m_sett_misc->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::sett_misc ), NULL, this );
+	m_about->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( main_window::about ), NULL, this );
 
 }
 

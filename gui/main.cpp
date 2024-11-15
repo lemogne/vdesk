@@ -2,6 +2,8 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
+#include <wx/stc/stc.h>
+#include <wx/aboutdlg.h>
 #include <vector>
 #include <unordered_map>
 #include <iostream>
@@ -14,7 +16,7 @@
 #include <wx/wx.h>
 #endif
 
-#define vdesk_VERSION "0.1"
+#define vdesk_VERSION "24-03a"
 
 struct profile {
 	wxString name;
@@ -580,6 +582,21 @@ public:
 	virtual void de_settings(wxCommandEvent& event) {
 		de_s de = de_s(this);
 		de.ShowModal();
+	}
+
+	virtual void about(wxCommandEvent& event) {
+		wxAboutDialogInfo aboutInfo;
+
+        aboutInfo.SetIcon(icon);
+        aboutInfo.SetName("VDesk");
+        aboutInfo.SetVersion("Version " vdesk_VERSION);
+        aboutInfo.SetDescription("Remote Desktop using SSH X11 forwarding");
+        aboutInfo.SetCopyright("GNU General Public License v3.0");
+        aboutInfo.SetWebSite("https://github.com/lemogne/vdesk");
+        aboutInfo.AddDeveloper("lemogne");
+
+        wxAboutBox(aboutInfo);
+
 	}
 };
 
