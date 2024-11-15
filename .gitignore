@@ -3,3 +3,4 @@
 gui/build
 gui/build/*
 gui/profiles.tsv
+releases
