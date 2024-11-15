@@ -29,7 +29,7 @@ To compile, run in the root directory of the repository:
 ```
 cd gui
 mkdir build
-cmake -DCMAKE_BUILD_TYPE=Release build
+cmake -DCMAKE_BUILD_TYPE=Release -B build
 cmake --build build
 ```
 which should produce a binary called `vdesk(.exe)` in the `gui/build` subdirectory. 
