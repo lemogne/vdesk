@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -O3 -DNDEBUG CMakeFiles/vdesk.dir/main.cpp.o CMakeFiles/vdesk.dir/vdesk_gui.cpp.o -o vdesk  -L/usr/lib/x86_64-linux-gnu -pthread -lwx_baseu_unofficial_net-3.2 -lwx_gtk3u_unofficial_core-3.2 -lwx_baseu_unofficial-3.2 -lwx_gtk3u_unofficial_stc-3.2 -lwx_gtk3u_unofficial_aui-3.2 -lwx_gtk3u_unofficial_propgrid-3.2 -lX11 
