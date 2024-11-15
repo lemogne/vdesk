@@ -28,6 +28,7 @@ Requirements: a suitable C++ compiler, CMake.
 To compile, run in the root directory of the repository:
 ```
 cd gui
+mkdir build
 cmake -DCMAKE_BUILD_TYPE=Release build
 cmake --build build
 ```
